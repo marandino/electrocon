@@ -1,0 +1,8 @@
+{
+  "name": "electrocon",
+  "template": "Default",
+  "isConfigured": {
+    "client": false,
+    "server": false
+  }
+}
