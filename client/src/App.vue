@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </div> -->
+    <navbar />
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  components:{
+    Navbar: require('./components/Navbar.vue').default,
+  }
+}
+</script>
 
 <style>
 #app {
