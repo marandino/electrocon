@@ -1,12 +1,16 @@
 <template>
   <div id="app">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      />
     </head>
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
     <navbar />
     <router-view />
   </div>
@@ -14,10 +18,10 @@
 
 <script>
 export default {
-  components:{
-    Navbar: require('./components/Navbar.vue').default,
+  components: {
+    Navbar: require("./components/Navbar.vue").default
   }
-}
+};
 </script>
 
 <style>
