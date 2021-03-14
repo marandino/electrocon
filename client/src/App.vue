@@ -11,11 +11,10 @@
         href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       />
     </head>
-    <navbar />
-    <router-view />
+    <navbar class="container" />
+    <router-view class="container" />
   </div>
 </template>
-
 <script>
 // - TAWK
 var Tawk_API = Tawk_API || {},
