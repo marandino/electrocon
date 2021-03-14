@@ -2,10 +2,7 @@
   <b-navbar>
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <img
-          src="../assets/logo.png"
-          alt="Electrocon Systems Logo"
-        />
+        <img src="../assets/logo.png" alt="Electrocon Systems Logo" />
       </b-navbar-item>
     </template>
     <template #start>
@@ -23,7 +20,8 @@
         <b-navbar-item href="#">
           Distributor Inquiry Form
         </b-navbar-item>
-      </b-navbar-dropdown>      <b-navbar-dropdown label="Product Range">
+      </b-navbar-dropdown>
+      <b-navbar-dropdown label="Product Range">
         <!-- TODO: add every product here dynamically -->
         <b-navbar-item href="#">
           product 1
@@ -35,7 +33,6 @@
       <b-navbar-item href="#">
         Contact
       </b-navbar-item>
-
     </template>
 
     <template #end>
