@@ -1,5 +1,5 @@
 <template>
-  <carousel />
+  <carousel class="my-6" />
 </template>
 
 <script>
