@@ -1,11 +1,15 @@
 <template>
   <b-carousel :indicator-inside="false">
-    <b-carousel-item v-for="(item, i) in 6" :key="i">
+    <b-carousel-item v-for="(product, i) in products" :key="i">
       <span class="image">
-        <product-details title="title" image="iamge" summary="summary" />
+        <product-details
+        :title="product.name"
+        :image="product.images[0]"
+        :summary="product.description"
+        />
       </span>
     </b-carousel-item>
-    <template #indicators="props">
+    <template #indicators="props" repeat>
       <span class="al image">
         <img :src="getImgUrl(props.i)" :title="props.i" />
       </span>
@@ -14,6 +18,8 @@
 </template>
 
 <script>
+const products = require("../data/products.json");
+
 export default {
   components: {
     ProductDetails: require("./ProductDetails.vue").default
@@ -21,9 +27,14 @@ export default {
   // add a method to retrieve all products
   // set the product image as the thumbnail
   // pass the image towards the product detail component as well
+  data() {
+    return {
+      products: products,
+    }
+  },
   methods: {
     getImgUrl(value) {
-      return `https://picsum.photos/id/43${value}/1230/500`;
+      return products[value].images[0];
     }
   }
 };

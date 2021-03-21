@@ -3,19 +3,15 @@
     <div class="columns is-centered">
       <div class="column is-5">
         <figure class="image is-4by3">
-          <!-- TOODO: softcode this to be the product piocture -->
-          <img src="https://picsum.photos/800/600/?random" alt="Description" />
+          <img :src=image :alt=title />
         </figure>
       </div>
-      <div class="column is-6 is-offset-1">
-        <h1 class="title is-2" v-text="summary" />
+      <div class="column is-6 is-align-self-center">
+        <h1 class="title is-2" v-text="title" />
         <h2 class="subtitle is-4" v-text="summary" />
-        <br />
-        <p class="has-text-centered">
-          <a class="button is-medium is-info is-outlined">
-            Learn more
-          </a>
-        </p>
+        <a class="button is-medium is-info is-outlined">
+          Learn more
+        </a>
       </div>
     </div>
   </div>
