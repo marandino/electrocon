@@ -52,7 +52,29 @@
 
 <script>
 export default {
-  name: "navbar"
+  name: "navbar",
+  data() {
+    return {
+      copy: {
+        links: Array,
+        cta: Array,
+        logo: Object
+      }
+    };
+  },
+  mounted() {
+    this.getContent();
+  },
+  methods: {
+    getContent() {
+      this.$prismic.client.getSingle("navbar").then(document => {
+        let { data } = document;
+        this.copy.cta = [data.primary, data.secondary];
+        this.copy.logo = data.logo;
+        this.copy.links = [data.product, data.about, data.contact];
+      });
+    }
+  }
 };
 </script>
 
