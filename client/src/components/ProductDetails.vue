@@ -3,7 +3,7 @@
     <div class="columns is-centered">
       <div class="column is-5">
         <figure class="image is-4by3">
-          <img :src=image :alt=title />
+          <img :src="image" :alt="title" />
         </figure>
       </div>
       <div class="column is-6 is-align-self-center">

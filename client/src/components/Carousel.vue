@@ -3,9 +3,9 @@
     <b-carousel-item v-for="(product, i) in products" :key="i">
       <span class="image">
         <product-details
-        :title="product.name"
-        :image="product.images[0]"
-        :summary="product.description"
+          :title="product.name"
+          :image="product.images[0]"
+          :summary="product.description"
         />
       </span>
     </b-carousel-item>
@@ -29,8 +29,8 @@ export default {
   // pass the image towards the product detail component as well
   data() {
     return {
-      products: products,
-    }
+      products: products
+    };
   },
   methods: {
     getImgUrl(value) {
