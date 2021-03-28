@@ -2,47 +2,26 @@
   <b-navbar>
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <img src="../assets/logo.png" alt="Electrocon Systems Logo" />
+        <img :src="copy.logo.url" alt="Electrocon Systems Logo" />
       </b-navbar-item>
     </template>
     <template #start>
-      <b-navbar-dropdown label="About Us">
+      <b-navbar-dropdown class="is-capitalized" v-for="( section, index ) in copy.navbarSections" :key="section" :label="section">
         <!-- TODO: add every product here dynamically -->
-        <b-navbar-item href="#">
-          Corporate Presentation
-        </b-navbar-item>
-        <b-navbar-item href="#">
-          Corporate Brochure
-        </b-navbar-item>
-        <b-navbar-item href="#">
-          Corporate Video
-        </b-navbar-item>
-        <b-navbar-item href="#">
-          Distributor Inquiry Form
+        <b-navbar-item href="#" v-for="(link, itemIndex) in copy.links[index]" :key="itemIndex">
+          {{ link.name }}
         </b-navbar-item>
       </b-navbar-dropdown>
-      <b-navbar-dropdown label="Product Range">
-        <!-- TODO: add every product here dynamically -->
-        <b-navbar-item href="#">
-          product 1
-        </b-navbar-item>
-        <b-navbar-item href="#">
-          product 2
-        </b-navbar-item>
-      </b-navbar-dropdown>
-      <b-navbar-item href="#">
-        Contact
-      </b-navbar-item>
     </template>
 
     <template #end>
       <b-navbar-item tag="div">
-        <div class="buttons">
+        <div class="buttons is-capitalized">
           <a class="button is-primary">
-            <strong>Call Us</strong>
+            <strong>{{ copy.cta[0] }}</strong>
           </a>
           <a class="button is-light">
-            Email Us
+            {{ copy.cta[1] }}
           </a>
         </div>
       </b-navbar-item>
@@ -56,7 +35,11 @@ export default {
   data() {
     return {
       copy: {
-        links: Array,
+        links: {
+          about: Array,
+          product: Array,
+          contact: Array,
+        },
         cta: Array,
         logo: Object
       }
@@ -71,7 +54,8 @@ export default {
         let { data } = document;
         this.copy.cta = [data.primary, data.secondary];
         this.copy.logo = data.logo;
-        this.copy.links = [data.product, data.about, data.contact];
+        this.copy.links = [ data.about, data.product, data.contact];
+        this.copy.navbarSections = ['about', 'product range', 'contact'];
       });
     }
   }
