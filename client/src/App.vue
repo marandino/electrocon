@@ -12,7 +12,11 @@
       />
     </head>
     <navbar class="container" :copy="this.copy" />
-    <router-view class="container" :copy="this.copy" />
+    <router-view
+      class="container"
+      :copy="this.copy"
+      :products="this.products"
+    />
   </div>
 </template>
 <script>
@@ -38,6 +42,7 @@ export default {
   },
   data() {
     return {
+      products: Array,
       copy: {
         links: {
           about: Array,
@@ -49,10 +54,17 @@ export default {
       }
     };
   },
-  mounted() {
+  created() {
     this.getContent();
+    this.getProducts();
   },
   methods: {
+    async getProducts() {
+      const response = await this.$prismic.client.query(
+        this.$prismic.Predicates.at("document.type", "product")
+      );
+      this.products = response.results;
+    },
     getContent() {
       this.$prismic.client.getSingle("navbar").then(document => {
         let { data } = document;
