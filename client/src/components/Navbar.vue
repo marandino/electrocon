@@ -6,9 +6,18 @@
       </b-navbar-item>
     </template>
     <template #start>
-      <b-navbar-dropdown class="is-capitalized" v-for="( section, index ) in copy.navbarSections" :key="section" :label="section">
+      <b-navbar-dropdown
+        class="is-capitalized"
+        v-for="(section, index) in copy.navbarSections"
+        :key="section"
+        :label="section"
+      >
         <!-- TODO: add every product here dynamically -->
-        <b-navbar-item href="#" v-for="(link, itemIndex) in copy.links[index]" :key="itemIndex">
+        <b-navbar-item
+          href="#"
+          v-for="(link, itemIndex) in copy.links[index]"
+          :key="itemIndex"
+        >
           {{ link.name }}
         </b-navbar-item>
       </b-navbar-dropdown>
@@ -32,34 +41,12 @@
 <script>
 export default {
   name: "navbar",
-  data() {
-    return {
-      copy: {
-        links: {
-          about: Array,
-          product: Array,
-          contact: Array,
-        },
-        cta: Array,
-        logo: Object
-      }
-    };
-  },
-  mounted() {
-    this.getContent();
-  },
-  methods: {
-    getContent() {
-      this.$prismic.client.getSingle("navbar").then(document => {
-        let { data } = document;
-        this.copy.cta = [data.primary, data.secondary];
-        this.copy.logo = data.logo;
-        this.copy.links = [ data.about, data.product, data.contact];
-        this.copy.navbarSections = ['about', 'product range', 'contact'];
-      });
-    }
-  }
+  props: ["copy"]
 };
 </script>
 
-<style></style>
+<style scoped>
+.navbar-item img {
+  max-height: 5rem;
+}
+</style>

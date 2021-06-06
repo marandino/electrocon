@@ -24,7 +24,7 @@ export default {
     summary: String,
     image: String
   },
-  name: "Product Details"
+  name: "product-details"
 };
 </script>
 

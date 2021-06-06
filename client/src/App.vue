@@ -11,8 +11,12 @@
         href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       />
     </head>
-    <navbar class="container" />
-    <router-view class="container" />
+    <navbar class="container" :copy="this.copy" />
+    <router-view
+      class="container"
+      :copy="this.copy"
+      :products="this.products"
+    />
   </div>
 </template>
 <script>
@@ -35,6 +39,41 @@ console.log(Tawk_LoadStart, "tawk has been loaded");
 export default {
   components: {
     Navbar: require("./components/Navbar.vue").default
+  },
+  data() {
+    return {
+      products: Array,
+      copy: {
+        links: {
+          about: Array,
+          product: Array,
+          contact: Array
+        },
+        cta: Array,
+        logo: Object
+      }
+    };
+  },
+  created() {
+    this.getContent();
+    this.getProducts();
+  },
+  methods: {
+    async getProducts() {
+      const response = await this.$prismic.client.query(
+        this.$prismic.Predicates.at("document.type", "product")
+      );
+      this.products = response.results;
+    },
+    getContent() {
+      this.$prismic.client.getSingle("navbar").then(document => {
+        let { data } = document;
+        this.copy.cta = [data.primary, data.secondary];
+        this.copy.logo = data.logo;
+        this.copy.links = [data.about, data.product, data.contact];
+        this.copy.navbarSections = ["about", "product range", "contact"];
+      });
+    }
   }
 };
 </script>

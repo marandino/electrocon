@@ -3,9 +3,9 @@
     <b-carousel-item v-for="(product, i) in products" :key="i">
       <span class="image">
         <product-details
-          :title="product.name"
-          :image="product.images[0]"
-          :summary="product.description"
+          :title="product.data.name[0].text"
+          :summary="product.data.description[0].text"
+          :image="product.data.image.url"
         />
       </span>
     </b-carousel-item>
@@ -18,23 +18,16 @@
 </template>
 
 <script>
-const products = require("../data/products.json");
-
 export default {
   components: {
     ProductDetails: require("./ProductDetails.vue").default
   },
-  // add a method to retrieve all products
-  // set the product image as the thumbnail
-  // pass the image towards the product detail component as well
-  data() {
-    return {
-      products: products
-    };
+  props: {
+    products: Array
   },
   methods: {
     getImgUrl(value) {
-      return products[value].images[0];
+      return null || value;
     }
   }
 };
