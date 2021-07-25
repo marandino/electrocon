@@ -29,7 +29,7 @@
           <a class="button is-primary" href="tel:+918048601954">
             <strong>{{ copy.cta[0] }}</strong>
           </a>
-          <a class="button is-light">
+          <a class="button is-light" href="mailto:electrocon2004@gmail.com?Subject=Product%20Enquiry">
             {{ copy.cta[1] }}
           </a>
         </div>
