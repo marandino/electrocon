@@ -26,7 +26,7 @@
     <template #end>
       <b-navbar-item tag="div">
         <div class="buttons is-capitalized">
-          <a class="button is-primary">
+          <a class="button is-primary" href="tel:+918048601954">
             <strong>{{ copy.cta[0] }}</strong>
           </a>
           <a class="button is-light">
