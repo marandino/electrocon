@@ -3,15 +3,15 @@
     <b-carousel-item v-for="(product, i) in products" :key="i">
       <span class="image">
         <product-details
-          :title="product.data.name[0].text"
+          :title="getTitle(i)"
           :summary="product.data.description[0].text"
           :image="product.data.image.url"
         />
       </span>
     </b-carousel-item>
-    <template #indicators="props" repeat>
+    <template #indicators="props">
       <span class="al image">
-        <img :src="getImgUrl(props.i)" :title="props.i" />
+        <img :src="getThumbUrl(props.i)" :alt="getTitle(props.i)" />
       </span>
     </template>
   </b-carousel>
@@ -26,8 +26,11 @@ export default {
     products: Array
   },
   methods: {
-    getImgUrl(value) {
-      return null || value;
+    getThumbUrl(value) {
+      return null || this.products[value].data.thumbnail.url;
+    },
+    getTitle(value) {
+      return null || this.products[value].data.name[0].text;
     }
   }
 };

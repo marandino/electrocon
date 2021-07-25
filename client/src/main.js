@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 // import "tailwindcss/tailwind.css"
 import Buefy from "buefy";
-import "buefy/dist/buefy.css";
+// import "buefy/dist/buefy.css";
 
 // start of Prismic.io
 import PrismicVue from "@prismicio/vue";
