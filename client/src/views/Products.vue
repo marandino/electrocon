@@ -4,7 +4,7 @@
       <b-tab-item
         v-for="category in categories"
         :label="category"
-				:value="category"
+        :value="category"
         :key="category"
       >
         <products-by-category :category="category"> </products-by-category>
@@ -16,16 +16,18 @@
 <script>
 export default {
   name: "products",
-  components:{
+  components: {
     ProductsByCategory: require("../components/ProductsByCategory.vue").default
-	},
-	created(){
-		let uri = window.location.href.split("?");
-		this.activeCategory = decodeURI(uri[1] || 'Underground Cable Fault Locators');
-	},
+  },
+  created() {
+    let uri = window.location.href.split("?");
+    this.activeCategory = decodeURI(
+      uri[1] || "Underground Cable Fault Locators"
+    );
+  },
   data() {
     return {
-			activeCategory: '',
+      activeCategory: "",
       categories: [
         "Underground Cable Fault Locators",
         "Cable Fault Prelocators",

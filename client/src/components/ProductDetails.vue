@@ -16,7 +16,11 @@
         >
           Learn More
         </a>
-        <a v-else class="button is-medium is-info is-outlined" href="javascript:void(Tawk_API.toggle())">
+        <a
+          v-else
+          class="button is-medium is-info is-outlined"
+          href="javascript:void(Tawk_API.toggle())"
+        >
           Get a Quotation
         </a>
       </div>
@@ -29,7 +33,7 @@ export default {
   props: {
     id: String,
     isCarousel: Boolean,
-    product: Object,
+    product: Object
   },
   name: "product-details"
 };
