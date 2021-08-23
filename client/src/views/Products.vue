@@ -1,41 +1,39 @@
 <template>
-  <b-tabs type="is-toggle" expanded v-on:input="changeCategory">
-    <b-tab-item
-      headerClass="is-capitalized"
-      v-for="category in categories"
-      v-bind:key="category + '-tab'"
-      :label="category"
-      :value="category"
-    ></b-tab-item>
-  </b-tabs>
-
-  <!-- // sidebar -->
-  <!-- // tabs -->
-  <!-- // product details -->
+  <section>
+    <b-tabs size="medium" vertical v-model="activeCategory">
+      <b-tab-item
+        v-for="category in categories"
+        :label="category"
+				:value="category"
+        :key="category"
+      >
+        <products-by-category :category="category"> </products-by-category>
+      </b-tab-item>
+    </b-tabs>
+  </section>
 </template>
 
 <script>
 export default {
   name: "products",
-  components: {},
+  components:{
+    ProductsByCategory: require("../components/ProductsByCategory.vue").default
+	},
+	created(){
+		let uri = window.location.href.split("?");
+		this.activeCategory = decodeURI(uri[1] || 'Underground Cable Fault Locators');
+	},
   data() {
     return {
-      selectedTab: "",
+			activeCategory: '',
       categories: [
-        "cable fault locator",
-        "high voltage tester",
-        "cable route tracer",
-        "live cable detector",
-        "surge receiver",
-        "underground cable fault locator"
+        "Underground Cable Fault Locators",
+        "Cable Fault Prelocators",
+        "Hi Pot Testers",
+        "Cable Route Tracers",
+        "Relay Testers"
       ]
     };
-  },
-  methods: {
-    changeCategory(category) {
-      console.log(category);
-      this.selectedTab = category;
-    }
   }
 };
 </script>
