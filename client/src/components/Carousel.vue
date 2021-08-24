@@ -3,9 +3,9 @@
     <b-carousel-item v-for="(product, i) in products" :key="i">
       <span class="image">
         <product-details
-          :title="getTitle(i)"
-          :summary="product.data.description[0].text"
-          :image="product.data.image.url"
+          :id="product.id"
+          :isCarousel="true"
+          :product="product.data"
         />
       </span>
     </b-carousel-item>
