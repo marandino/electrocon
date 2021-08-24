@@ -4,7 +4,6 @@
       <span class="image">
         <product-details
           :id="product.id"
-          :isCarousel="true"
           :product="product.data"
         />
       </span>
