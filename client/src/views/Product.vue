@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- product specific information -->
-    <section v-if="productIDg">
+    <section v-if="productID">
       <prismic-image :field="data.image"></prismic-image>
       <prismic-rich-text :field="data.detail"></prismic-rich-text>
       <prismic-rich-text :field="data.description"></prismic-rich-text>
