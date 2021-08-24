@@ -22,8 +22,11 @@ export default {
   created() {
     let uri = window.location.href.split("?");
     this.activeCategory = decodeURI(
-      uri[1] || "Underground Cable Fault Locators"
+      uri[1] || this.currentProductCategory
     );
+  },
+  props: {
+    currentProductCategory: String,
   },
   data() {
     return {
