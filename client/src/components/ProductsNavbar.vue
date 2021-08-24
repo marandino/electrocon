@@ -1,6 +1,6 @@
 <template>
   <section>
-    <b-tabs size="medium" vertical v-model="activeCategory">
+    <b-tabs size="medium" horizontal type="is-toggle" :expanded="true" v-model="activeCategory">
       <b-tab-item
         v-for="category in categories"
         :label="category"
@@ -15,9 +15,9 @@
 
 <script>
 export default {
-  name: "products",
+  name: "products-navbar",
   components: {
-    ProductsByCategory: require("../components/ProductsByCategory.vue").default
+    ProductsByCategory: require("./ProductsByCategory.vue").default
   },
   created() {
     let uri = window.location.href.split("?");

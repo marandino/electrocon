@@ -1,5 +1,6 @@
 <template>
   <div>
+    <products-navbar></products-navbar>
     <prismic-image :field="data.image"></prismic-image>
     <prismic-rich-text :field="data.detail"></prismic-rich-text>
     <prismic-rich-text :field="data.description"></prismic-rich-text>
@@ -8,7 +9,7 @@
       <li
         v-for="(detail, i) in data.details"
         :key="i + 'details'"
-        class="columns"
+        class="columns has-text-left is-1"
       >
         <p class="column is-one-third">{{ detail.text }}</p>
         <p class="column is-two-thirds">{{ detail.label }}</p>
@@ -33,7 +34,7 @@
 export default {
   name: "product",
   components: {
-    // ProductsByCategory: require("../components/ProductsByCategory.vue").default
+    ProductsNavbar: require("../components/ProductsNavbar.vue").default
   },
   created() {
     this.getData();

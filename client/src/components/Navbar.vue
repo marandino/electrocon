@@ -14,7 +14,7 @@
       >
         <!-- TODO: add link.href and link.name as a proper link thing @ prismic -->
         <b-navbar-item
-          :href="'/products?' + link.name"
+          :href="'/product?' + link.name"
           v-for="(link, itemIndex) in copy.links[index]"
           :key="itemIndex"
         >
