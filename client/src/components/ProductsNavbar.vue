@@ -1,6 +1,12 @@
 <template>
   <section>
-    <b-tabs size="medium" horizontal type="is-toggle" :expanded="true" v-model="activeCategory">
+    <b-tabs
+      size="medium"
+      horizontal
+      type="is-toggle"
+      :expanded="true"
+      v-model="activeCategory"
+    >
       <b-tab-item
         v-for="category in categories"
         :label="category"
@@ -21,12 +27,10 @@ export default {
   },
   created() {
     let uri = window.location.href.split("?");
-    this.activeCategory = decodeURI(
-      uri[1] || this.currentProductCategory
-    );
+    this.activeCategory = decodeURI(uri[1] || this.currentProductCategory);
   },
   props: {
-    currentProductCategory: String,
+    currentProductCategory: String
   },
   data() {
     return {

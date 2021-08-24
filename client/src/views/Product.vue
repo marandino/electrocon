@@ -1,37 +1,37 @@
 <template>
-	<div>
-		<!-- product specific information -->
-		<section v-if="productIDg">
-			<prismic-image :field="data.image"></prismic-image>
-			<prismic-rich-text :field="data.detail"></prismic-rich-text>
-			<prismic-rich-text :field="data.description"></prismic-rich-text>
-			<!-- <prismic-rich-text :field="data.details"></prismic-rich-text> -->
-			<ul>
-				<li
-					v-for="(detail, i) in data.details"
-					:key="i + 'details'"
-					class="columns has-text-left is-1"
-				>
-					<p class="column is-one-third">{{ detail.text }}</p>
-					<p class="column is-two-thirds">{{ detail.label }}</p>
-				</li>
-			</ul>
-			<ul>
-				<li
-					v-for="(feature, i) in data.features"
-					:key="i + 'feature'"
-					class="columns"
-				>
-					<!-- //TODO: fix this crap pls... how come this data is description1???? -->
-					<prismic-rich-text :field="feature.description1">
-						{{ feature }}</prismic-rich-text
-					>
-				</li>
-			</ul>
-		</section>
-		<!-- other products recommendations -->
-		<products-navbar :currentProductCategory="data.category"></products-navbar>
-	</div>
+  <div>
+    <!-- product specific information -->
+    <section v-if="productIDg">
+      <prismic-image :field="data.image"></prismic-image>
+      <prismic-rich-text :field="data.detail"></prismic-rich-text>
+      <prismic-rich-text :field="data.description"></prismic-rich-text>
+      <!-- <prismic-rich-text :field="data.details"></prismic-rich-text> -->
+      <ul>
+        <li
+          v-for="(detail, i) in data.details"
+          :key="i + 'details'"
+          class="columns has-text-left is-1"
+        >
+          <p class="column is-one-third">{{ detail.text }}</p>
+          <p class="column is-two-thirds">{{ detail.label }}</p>
+        </li>
+      </ul>
+      <ul>
+        <li
+          v-for="(feature, i) in data.features"
+          :key="i + 'feature'"
+          class="columns"
+        >
+          <!-- //TODO: fix this crap pls... how come this data is description1???? -->
+          <prismic-rich-text :field="feature.description1">
+            {{ feature }}</prismic-rich-text
+          >
+        </li>
+      </ul>
+    </section>
+    <!-- other products recommendations -->
+    <products-navbar :currentProductCategory="data.category"></products-navbar>
+  </div>
 </template>
 
 <script>
