@@ -7,8 +7,8 @@
         </figure>
       </div>
       <div class="column is-6 is-align-self-center">
-        <prismic-rich-text class="title is-2" :field="product.name" />
-        <prismic-rich-text class="subtitle is-4" :field="product.description" />
+        <prismic-rich-text class="title" :field="product.name" />
+        <prismic-rich-text class="subtitle" :field="product.description" />
         <a
           class="button is-medium is-info is-outlined"
           :href="'/product/' + id"
