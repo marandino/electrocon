@@ -2,10 +2,7 @@
   <b-carousel :indicator-inside="false">
     <b-carousel-item v-for="(product, i) in products" :key="i">
       <span class="image">
-        <product-details
-          :id="product.id"
-          :product="product.data"
-        />
+        <product-details :id="product.id" :product="product.data" />
       </span>
     </b-carousel-item>
     <template #indicators="props">
