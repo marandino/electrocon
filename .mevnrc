@@ -2,6 +2,6 @@
   "name": "electrocon",
   "template": "Default",
   "isConfigured": {
-    "client": true,
+    "client": true
   }
 }
