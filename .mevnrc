@@ -3,6 +3,5 @@
   "template": "Default",
   "isConfigured": {
     "client": true,
-    "server": false
   }
 }
