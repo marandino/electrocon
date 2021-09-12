@@ -37,6 +37,6 @@ export default {
   filter: grayscale(0%);
 }
 .al img {
-  filter: grayscale(100%);
+  filter: grayscale(30%);
 }
 </style>
