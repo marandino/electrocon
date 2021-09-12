@@ -70,7 +70,17 @@ export default {
         let { data } = document;
         this.copy.cta = [data.primary, data.secondary];
         this.copy.logo = data.logo;
-        this.copy.links = [data.product, [{name: 'email', url: 'mailto:electrocon2004@gmail.com?Subject=Product%20Enquiry', tel:+918048601954}, {name: 'phone', url: 'tel:+918048601954'}]];
+        this.copy.links = [
+          data.product,
+          [
+            {
+              name: "email",
+              url: "mailto:electrocon2004@gmail.com?Subject=Product%20Enquiry",
+              tel: +918048601954
+            },
+            { name: "phone", url: "tel:+918048601954" }
+          ]
+        ];
         this.copy.navbarSections = ["product range", "contact"];
       });
     }
