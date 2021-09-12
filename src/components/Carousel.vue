@@ -1,5 +1,5 @@
 <template>
-  <b-carousel :indicator-inside="false">
+  <b-carousel :indicator-inside="false" :interval="10000">
     <b-carousel-item v-for="(product, i) in products" :key="i">
       <span class="image">
         <product-details :id="product.id" :product="product.data" />
@@ -37,6 +37,6 @@ export default {
   filter: grayscale(0%);
 }
 .al img {
-  filter: grayscale(100%);
+  filter: grayscale(30%);
 }
 </style>

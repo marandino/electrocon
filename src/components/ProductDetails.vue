@@ -2,7 +2,7 @@
   <div class="container has-text-centered">
     <div class="columns is-centered">
       <div class="column is-5">
-        <figure class="image is-4by3">
+        <figure class="image">
           <prismic-image :field="product.image"></prismic-image>
         </figure>
       </div>
