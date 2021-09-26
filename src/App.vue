@@ -89,6 +89,18 @@ export default {
 </script>
 
 <style>
+/* background gradient */
+html {
+  background: rgb(243, 236, 254);
+  background: linear-gradient(
+    0deg,
+    rgba(243, 236, 254, 1) 4%,
+    rgba(208, 237, 255, 1) 24%,
+    rgba(255, 255, 255, 1) 57%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
