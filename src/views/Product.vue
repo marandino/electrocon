@@ -6,7 +6,7 @@
         <div class="column is-one-third block">
           <prismic-image :field="data.image"></prismic-image>
           <a
-            class="button is-medium is-info is-outlined"
+            class="button is-medium is-primary is-outlined"
             href="javascript:void(Tawk_API.toggle())"
           >
             Get a cuotation
